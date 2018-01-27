@@ -11,9 +11,20 @@ function getDate(){
 
 function getTime() {
 	var today = new Date();
-	var hrs = today.getHours();
-	var mins = today.getMinutes();
-	var timeFormat = hrs + ":" + mins
-
+	var hr = today.getHours();
+	var min = today.getMinutes();
+	hr = updateHours(hr);
+	min = updateMins(min);
+	var timeFormat = hr + ":" + min
 	document.getElementById('time').innerHTML = timeFormat;
+}
+
+function updateMins(i) {
+    if (i < 10) {i = "0" + i};
+    return i;
+}
+
+function updateHours(i) {
+	if (i > 12) {i -= 12};
+	return i;
 }
