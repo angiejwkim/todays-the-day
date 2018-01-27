@@ -11,9 +11,10 @@ function getTime(){
 	var today = new Date();
 	var hr = today.getHours();
 	var min = today.getMinutes();
+	m = updateDay(hr);
 	hr = updateHours(hr);
 	min = updateMins(min);
-	var timeFormat = hr + ":" + min
+	var timeFormat = hr + ":" + min + " " + m;
 	document.getElementById('time').innerHTML = timeFormat;
 	var t = setTimeout(getTime, 500);
 }
@@ -24,6 +25,11 @@ function updateMins(i) {
 }
 
 function updateHours(i) {
-	if (i > 12) {i -= 12};
+	if (i > 12) {i = i-12};
 	return i;
+}
+
+function updateDay(i) {
+	if (i > 12) {return "PM";}
+	else {return "AM";}
 }
