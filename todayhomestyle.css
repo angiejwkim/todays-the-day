@@ -5,9 +5,11 @@ body {
 
 h1 {
 	text-align: center;
-<<<<<<< HEAD
+	font-size: 2.5em;
+}
+
+h2 {
+	text-align: center;
+	font-size: 2em;
 	font-family: 'Source Sans Pro', sans-serif;
-=======
-	font-size: 3em;
->>>>>>> 4af1525c51b82928d7ecc03d05496f14957af527
 }
