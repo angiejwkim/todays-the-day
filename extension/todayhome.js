@@ -8,3 +8,11 @@ function getDate(){
 	var dateFormat = day + ", " + month + " " + now.getDay() + " " + now.getFullYear();
 	document.getElementById("date").innerHTML =  dateFormat;
 }
+
+function getTime() {
+	var today = new Date();
+	var hrs = today.getHours();
+	var mins = today.getMinutes();
+	var timeFormat = hrs + ":" + mins
+
+	document.getByElementId('time').innerHTML = timeFormat;
