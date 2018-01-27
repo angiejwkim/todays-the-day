@@ -1,15 +1,13 @@
-function getDate(){
+function getTime(){
 	var now = new Date();
 	var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
 	var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
 
 	var day = days[now.getDay()];
 	var month = months[now.getMonth()];
-	var dateFormat = day + ", " + month + " " + now.getDay() + " " + now.getFullYear();
+	var dateFormat = day + ", " + month + " " + now.getDate() + ", " + now.getFullYear();
 	document.getElementById("date").innerHTML =  dateFormat;
-}
 
-function getTime() {
 	var today = new Date();
 	var hr = today.getHours();
 	var min = today.getMinutes();
