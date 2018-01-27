@@ -107,7 +107,7 @@ function listEvents(auth) {
     calendarId: 'primary',
     // timeMin: (new Date()).toISOString(),
     singleEvents: true,
-    orderBy: 'updated'
+    orderBy: 'startTime'
   }, function(err, response) {
     if (err) {
       console.log('The API returned an error: ' + err);
