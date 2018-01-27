@@ -15,6 +15,7 @@ function getTime(){
 	min = updateMins(min);
 	var timeFormat = hr + ":" + min
 	document.getElementById('time').innerHTML = timeFormat;
+	var t = setTimeout(getTime, 500);
 }
 
 function updateMins(i) {
