@@ -15,35 +15,63 @@ h2 {
 	font-family: 'Gafata', sans-serif;
 }
 
+h3 {
+	text-align: center;
+	font-size: 2em;
+	font-family: 'Gafata', sans-serif;
+}
+
+h4 {
+	text-align: center;
+	font-size: 2em;
+	font-family: 'Gafata', sans-serif;
+}
+
+h5 {
+	text-align: center;
+	font-size: 2em;
+	font-family: 'Gafata', sans-serif;
+}
+
+h6 {
+	text-align: center;
+	font-size: 1em;
+	font-family: 'Gafata', sans-serif;
+}
+
+ul{
+	font-family: 'Gafata', sans-serif;
+}
+
 #datesect {
-	height: 10vh;
+	height: 50px;
 }
 
 #timesect {
-	height: 10vh;
+	height: 30px;
 }
 
 #content {
     min-width:1100px; 
     width: 100%;
-    background-color: #ffcc33;
+    background-color: #FFFFFF;
     margin: auto;
-    height: 60vh;
+    height: 450px;
 }
 
 #events {
     width: 50%;
     float: left;
-    height: 500px;
+    height: 450px;
     background-color: #FFFFFF;
 }
 #countdown {
     width: 50%;
     float: left;
-    height: 500px;
+    height: 450px;
     background-color: #FFFFFF;
 }
 
 #factofday {
-	height: 20vh;
+	height: 20px;
 }
