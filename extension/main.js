@@ -15,5 +15,5 @@ function getTime() {
 	var mins = today.getMinutes();
 	var timeFormat = hrs + ":" + mins
 
-	document.getByElementId('time').innerHTML = timeFormat;
+	document.getElementById('time').innerHTML = timeFormat;
 }
