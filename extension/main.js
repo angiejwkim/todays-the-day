@@ -1,10 +1,10 @@
-document.getElementById("date").innerHTML=
-document.getElementById("time").innerHTML=
-
 function getDate(){
-	var date = new Date("10/11/2009"),
-    locale = "en-us",
-    month = date.toLocaleString(locale, { month: "long" });
+	var now = new Date();
+	var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+	var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
 
-    
+	var day = days[now.getDay()];
+	var month = months[now.getMonth()];
+	var dateFormat = day + ", " + month + " " + now.getDay() + " " + now.getFullYear();
+	document.getElementById("date").innerHTML =  dateFormat;
 }
