@@ -172,12 +172,24 @@ var data = {};
 				//data: JSON.stringify(data),
 				success: function(data){
 					testy = data;
-					console.log(data);
-					var city = data.city.name;
-					var weath = data.list[0];
+					console.log(testy);
+					var city = testy.city.name;
+					var weath = testy.list[0];
 					var temp = Math.floor(weath.main.temp - 273); //celcius
-					/*var raining = weath.rain.3h > 0.5;
-					var cloudy = weath.coulds.all > 0.5;*/
+					var raining = weath.rain["3h"] > 0.5;
+					var verycloudy = weath.clouds["all"] > 0.75;
+					var cloudy = weath.clouds["all"] > 0.5;
+					console.log(raining);
+					if(raining){
+						document.getElementsByTagName("img")[0].src = "rainicon.png";
+					}else if (verycloudy){
+						document.getElementsByTagName("img")[0].src = "cloudyicon.png";
+					}else if (cloudy){
+						document.getElementsByTagName("img")[0].src = "partlycloudyicon.png";
+					}
+					else{
+						document.getElementsByTagName("img")[0].src = "sunnyicon.png";
+					}
 				}
 			});
         });
