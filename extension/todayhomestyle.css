@@ -51,7 +51,7 @@ h6 {
 	color: #000000;
 }
 
-h2, h3, h4, h5, h6 {
+h2, h3, h5 {
 	font-weight: normal;
 }
 
@@ -74,15 +74,12 @@ h2, h3, h4, h5, h6 {
 	padding-right: 20px;
 }
 
-#iconsection{
-	padding-left: 20px;
-}
-
 #tempsection{
 	padding-left: 10px;
 }
 
 #content {
+	display: flex;
     min-width:1100px; 
     width: 100%;
     background-color: #EEEEEE;
@@ -93,7 +90,6 @@ h2, h3, h4, h5, h6 {
 	display: flex;
 	flex-direction: column;
     width: 50%;
-    float: left;
     background-color: #EEEEEE;
     column-gap: 10px;
 }
@@ -130,7 +126,7 @@ h2, h3, h4, h5, h6 {
   font-family: 'Lato', sans-serif;
   margin-left: 165px;
   margin-top: 10px;
-  margin-bottom: 60px;
+  margin-bottom: 50px;
 }
 
 #eventsect{
@@ -139,17 +135,21 @@ h2, h3, h4, h5, h6 {
 }
 
 #nexteventtitle{
-	padding-left: 50px;
+	padding-left: 65px;
 	margin-bottom: 10px;
+	font-weight: bold;
 }
 
 #countdowntitle{
 	margin-top: -20px;
 	margin-bottom: -20px;
+	font-weight: bold;
 }
 
 #numberleft{
 	margin-top: -20px;
 }
 
-
+#hoursleft {
+	font-weight: normal;
+}
