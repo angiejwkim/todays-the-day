@@ -76,11 +76,12 @@ $.ajax({
 });
 
 function getWeather() {
-
+	var weatherFormat = document.getElementById("weather");
+	var loc = getLocation()
 }
 
 function getLocation() {
-	var loc = document.getElementById("location");
+	//var loc = document.getElementById("location");
     if (navigator.geolocation) {
         return navigator.geolocation.getCurrentPosition();
     } else { 
