@@ -45,12 +45,34 @@ function updateDay(i) {
 window.onload = getTime()
 window.onload = chrome.identity.getAuthToken({ 'interactive': true }, function(token) {
   // Use the token.
-  $.get(
+  /*$.get(
     "https://www.googleapis.com/calendar/v3/users/me/calendarList?access_token="+token,
     function(data) {
        console.log(data);
     }
-	);
+);*/
+today = new Date();
+endDay = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 1);
+$.ajax({
+  url: "https://www.googleapis.com/calendar/v3/calendars/primary/events?access_token="+token,
+  type: "get", //send it through get method
+  data: { 
+    orderBy: "startTime",
+    maxResults: 5,
+    timeMin: (today).toISOString(),
+    timeMax: (endDay).toISOString(),
+    singleEvents: true
+  },
+  success: function(response) {
+  nextEvents = response.items;
+    console.log(nextEvents);
+  },
+  error: function(xhr) {
+    //Do Something to handle error
+    //ADDD STUFF
+    console.log(xhr)
+  }
+});
 });
 
 function getWeather() {
