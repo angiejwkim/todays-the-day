@@ -77,15 +77,21 @@ $.ajax({
 	    for(var i in nextEvents){
 	    	var temp = document.createElement("div");
 	    	temp.id = "eventsect";
-	    	if (nextEvents[i].start.dateTime.substring(11, 12) == "0"){
-				var timetext = document.createTextNode(nextEvents[i].start.dateTime.substring(12, 16));
-			}else if(nextEvents[i].start.dateTime.substring(11, 13) > 12){
+	    	if (nextEvents[i].start.dateTime.substring(11, 12) == "0") {
+				var timetext = document.createTextNode(nextEvents[i].start.dateTime.substring(12, 16) + " AM");
+			} 
+			else if(nextEvents[i].start.dateTime.substring(11, 13) > 12){
 				var timetext = document.createTextNode(
 					(nextEvents[i].start.dateTime.substring(11, 13) - 12) + 
-					nextEvents[i].start.dateTime.substring(13, 16));
+					nextEvents[i].start.dateTime.substring(13, 16) + " PM");
+			}
+			else if (nextEvents[i].start.dateTime.substring(11, 13) == 12) {
+				var timetext = document.createTextNode(
+					(nextEvents[i].start.dateTime.substring(11, 13)) + 
+					nextEvents[i].start.dateTime.substring(13, 16) + " PM");
 			}
 			else{
-				var timetext = document.createTextNode(nextEvents[i].start.dateTime.substring(11, 16));
+				var timetext = document.createTextNode(nextEvents[i].start.dateTime.substring(11, 16) + " AM");
 			}	
 			var summarytext = document.createTextNode(nextEvents[i].summary);
 			var innerdiv = document.createElement("div");
