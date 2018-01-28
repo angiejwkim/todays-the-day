@@ -64,13 +64,32 @@ $.ajax({
     singleEvents: true
   },
   success: function(response) {
-   nextEvents = response.items;
+    nextEvents = response.items;
     console.log(nextEvents);
-    var newHtml = "<div id='nexteventtitle'><h4> Upcoming Events </h4></div>";
-    for(var i in nextEvents){
-    newHtml + "<div id='eventsect'><div id='event'>"+"TIME"+"</div><h3> "+i.summary +"</h3></div>"
-    }
-    console.log(newHtml);
+    if(nextEvents.length==0){
+    	var messagetext = document.createTextNode("No more events today!");
+    	var innerh3 = document.createElement("h3");
+    	innerh3.appendChild(messagetext);
+		document.getElementById("inner events").append(innerh3);;
+    }else{
+	    //document.getElementById("inner events").innerHTML="";
+	    for(var i in nextEvents){
+	    	var temp = document.createElement("div");
+	    	temp.id = "eventsect";
+	    	var timetext = document.createTextNode(nextEvents[0].start.dateTime);
+			var summarytext = document.createTextNode(nextEvents[i].summary);
+			var innerdiv = document.createElement("div");
+			innerdiv.appendChild(timetext);
+			innerdiv.id = "event";
+			var innerh3 = document.createElement("h3");
+			innerh3.appendChild(summarytext);
+			temp.appendChild(innerdiv);
+			temp.appendChild(innerh3);
+			console.log(temp)
+			document.getElementById("inner events").append(temp);
+	    }
+	}
+    //document.getElementById("inner events");
 
   },
   error: function(xhr) {
@@ -81,6 +100,7 @@ $.ajax({
 });
 });
 
+/*
 $.ajax({
 	url: "http://localhost:8000/weather",
 	type: "get",
@@ -99,10 +119,11 @@ function getLocation() {
 	//var loc = document.getElementById("location");
     if (navigator.geolocation) {
         return navigator.geolocation.getCurrentPosition();
+        //^Failed to execute 'getCurrentPosition' on 'Geolocation': 1 argument required, but only 0 present.
     } else { 
         loc.innerHTML = "Geolocation is not supported by this browser.";
     }
-}
+}*/
 
 
 
