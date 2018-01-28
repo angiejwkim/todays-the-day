@@ -71,7 +71,7 @@ $.ajax({
     	var innerh3 = document.createElement("h3");
     	innerh3.appendChild(messagetext);
 		document.getElementById("inner events").append(innerh3);;
-		document.getElementById("nexteventsection").innerHTML="All clear!";
+		document.getElementById("nexteventsection").innerHTML="You have no more events today.";
     }else{
 	    //document.getElementById("inner events").innerHTML="";
 	    for(var i in nextEvents){
@@ -99,20 +99,44 @@ $.ajax({
 			document.getElementById("inner events").append(temp);
 	    };
 	    document.getElementById("nexteventsection").innerHTML=nextEvents[0].summary;
-	    var eventHour = nextEvents[0].start.dateTime.substring(11, 13);
-	    var eventMin = nextEvents[0].start.dateTime.substring(14, 16);
-	    var curHour = today.getHours();
-		var curMin = today.getMinutes();
-		if((eventHour > 12 && curHour < 12) || (eventHour < curHour) || (eventHour == curHour && eventMin <= curMin)){
-			document.getElementById("hoursleft").innerHTML="Currently";
-		}else{
-			if (eventMin < curMin){
-				document.getElementById("hoursleft").innerHTML="In "+ (eventHour - curHour - 1) +" Hours";
-			}else{
-				document.getElementById("hoursleft").innerHTML="In "+ (eventHour - curHour) +" Hours";
-			}
-			//In 0 hours? switch to hours and minutes format?	
-		}
+
+	    var next = nextEvents[0];
+	    var eventHour = next.start.dateTime.substring(11, 13);
+	    var eventMin = next.start.dateTime.substring(14, 16);
+	    var eventDate = next.start.dateTime.substring(8, 10);
+
+	    var currHour = today.getHours();
+		var currMin = today.getMinutes();
+		var currDate = today.getDate();
+
+		var eventTime = (Number(eventHour) * 60) + Number(eventMin);
+		var currTime = (Number(currHour) * 60) + Number(currMin); 
+
+	    var timeDiff = eventTime - currTime;
+	    var numHours = Math.floor(timeDiff / 60);
+	    var numMinutes = timeDiff % 60;
+
+		if (eventTime <= currTime || (eventDate < currDate)) {
+	    	document.getElementById("hoursleft").innerHTML = "currently";
+	    }
+	    else if (numMinutes == 0) {
+	    	document.getElementById("hoursleft").innerHTML = 'in ' + numHours + ' hours';
+	    }
+	    else if (numHours == 0) {
+	    	document.getElementById("hoursleft").innerHTML = 'in ' + numMinutes + ' minutes';
+	    }
+	    else if (numHours == 1 && numMinutes == 1){
+	    	document.getElementById("hoursleft").innerHTML = 'in ' + numHours + ' hour and ' + numMinutes + ' minute';
+	    }
+	    else if (numHours == 1) {
+	    	document.getElementById("hoursleft").innerHTML = 'in ' + numHours + ' hour and ' + numMinutes + ' minutes';
+	    }
+	    else if (numMinutes == 1) {
+	    	document.getElementById("hoursleft").innerHTML = 'in ' + numHours + ' hours and ' + numMinutes + ' minute';
+	    }
+	    else {
+	    	document.getElementById("hoursleft").innerHTML = 'in ' + numHours + ' hours and ' + numMinutes + ' minutes';
+	    }
 	};
     //document.getElementById("inner events");
 
