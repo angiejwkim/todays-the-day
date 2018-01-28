@@ -33,3 +33,5 @@ function updateDay(i) {
 	if (i > 12) {return "PM";}
 	else {return "AM";}
 }
+
+window.onload = getTime()
