@@ -38,7 +38,7 @@ function updateHours(i) {
 }
 
 function updateDay(i) {
-	if (i > 12) {return "PM";}
+	if (i >= 12) {return "PM";}
 	else {return "AM";}
 }
 
