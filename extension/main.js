@@ -71,7 +71,7 @@ $.ajax({
     	var innerh3 = document.createElement("h3");
     	innerh3.appendChild(messagetext);
 		document.getElementById("innerevents").append(innerh3);;
-		document.getElementById("nexteventsection").innerHTML="You have no more events today.";
+		document.getElementById("nexteventsection").innerHTML="You have no more events";
     }else{
 	    //document.getElementById("inner events").innerHTML="";
 	    for(var i in nextEvents){
