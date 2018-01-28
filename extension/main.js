@@ -71,12 +71,22 @@ $.ajax({
     	var innerh3 = document.createElement("h3");
     	innerh3.appendChild(messagetext);
 		document.getElementById("inner events").append(innerh3);;
+		document.getElementById("nexteventsection").innerHTML="All clear!";
     }else{
 	    //document.getElementById("inner events").innerHTML="";
 	    for(var i in nextEvents){
 	    	var temp = document.createElement("div");
 	    	temp.id = "eventsect";
-	    	var timetext = document.createTextNode(nextEvents[0].start.dateTime);
+	    	if (nextEvents[i].start.dateTime.substring(11, 12) == "0"){
+				var timetext = document.createTextNode(nextEvents[i].start.dateTime.substring(12, 16));
+			}else if(nextEvents[i].start.dateTime.substring(11, 13) > 12){
+				var timetext = document.createTextNode(
+					(nextEvents[i].start.dateTime.substring(11, 13) - 12) + 
+					nextEvents[i].start.dateTime.substring(13, 16));
+			}
+			else{
+				var timetext = document.createTextNode(nextEvents[i].start.dateTime.substring(11, 16));
+			}	
 			var summarytext = document.createTextNode(nextEvents[i].summary);
 			var innerdiv = document.createElement("div");
 			innerdiv.appendChild(timetext);
@@ -87,8 +97,23 @@ $.ajax({
 			temp.appendChild(innerh3);
 			console.log(temp)
 			document.getElementById("inner events").append(temp);
-	    }
-	}
+	    };
+	    document.getElementById("nexteventsection").innerHTML=nextEvents[0].summary;
+	    var eventHour = nextEvents[0].start.dateTime.substring(11, 13);
+	    var eventMin = nextEvents[0].start.dateTime.substring(14, 16);
+	    var curHour = today.getHours();
+		var curMin = today.getMinutes();
+		if((eventHour > 12 && curHour < 12) || (eventHour < curHour) || (eventHour == curHour && eventMin <= curMin)){
+			document.getElementById("hoursleft").innerHTML="Currently";
+		}else{
+			if (eventMin < curMin){
+				document.getElementById("hoursleft").innerHTML="In "+ (eventHour - curHour - 1) +" Hours";
+			}else{
+				document.getElementById("hoursleft").innerHTML="In "+ (eventHour - curHour) +" Hours";
+			}
+			//In 0 hours? switch to hours and minutes format?	
+		}
+	};
     //document.getElementById("inner events");
 
   },
