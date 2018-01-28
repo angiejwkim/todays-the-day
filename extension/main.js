@@ -64,8 +64,14 @@ $.ajax({
     singleEvents: true
   },
   success: function(response) {
-  nextEvents = response.items;
+   nextEvents = response.items;
     console.log(nextEvents);
+    var newHtml = "<div id='nexteventtitle'><h4> Upcoming Events </h4></div>";
+    for(var i in nextEvents){
+    newHtml + "<div id='eventsect'><div id='event'>"+"TIME"+"</div><h3> "+i.summary +"</h3></div>"
+    }
+    console.log(newHtml);
+
   },
   error: function(xhr) {
     //Do Something to handle error
