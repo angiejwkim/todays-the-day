@@ -70,7 +70,7 @@ $.ajax({
     	var messagetext = document.createTextNode("No more events today!");
     	var innerh3 = document.createElement("h3");
     	innerh3.appendChild(messagetext);
-		document.getElementById("inner events").append(innerh3);;
+		document.getElementById("innerevents").append(innerh3);;
 		document.getElementById("nexteventsection").innerHTML="You have no more events today.";
     }else{
 	    //document.getElementById("inner events").innerHTML="";
@@ -102,7 +102,7 @@ $.ajax({
 			temp.appendChild(innerdiv);
 			temp.appendChild(innerh3);
 			console.log(temp)
-			document.getElementById("inner events").append(temp);
+			document.getElementById("innerevents").append(temp);
 	    };
 	    document.getElementById("nexteventsection").innerHTML=nextEvents[0].summary;
 
@@ -154,6 +154,45 @@ $.ajax({
   }
 });
 });
+
+window.onload = function() {
+console.log("hello");
+
+var data = {};
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+        	console.log(position);
+        	var latitude = position.coords.latitude;
+			var longitude = position.coords.longitude;
+			var url = "http://api.openweathermap.org/data/2.5/forecast?lat=" + latitude + "&lon=" + longitude + "&cnt=1&APPID=221f9ad5b6dd745192473e36ff30d4c6";
+			$.ajax({
+				url: url,
+				type: "get",
+				//contentType: "application/json",
+				//data: JSON.stringify(data),
+				success: function(data){
+					testy = data;
+					console.log(data);
+					var city = data.city.name;
+					var weath = data.list[0];
+					var temp = Math.floor(weath.main.temp - 273); //celcius
+					/*var raining = weath.rain.3h > 0.5;
+					var cloudy = weath.coulds.all > 0.5;*/
+				}
+			});
+        });
+        //^Failed to execute 'getCurrentPosition' on 'Geolocation': 1 argument required, but only 0 present.
+    } else { 
+        loc.innerHTML = "Geolocation is not supported by this browser.";
+    }
+
+
+
+function getWeather() {
+	var weatherFormat = document.getElementById("weather");
+	var loc = getLocation();
+}
+};
 
 /*
 $.ajax({
