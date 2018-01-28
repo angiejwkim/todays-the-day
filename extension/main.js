@@ -75,14 +75,14 @@ $.ajax({
 });
 });
 
-$.ajax({
-	url: "http://localhost:8000/weather"
-	type: "get",
-	data: {
-		latitude: getLocation().coords.latitude
-		longtitude: getLocation().coords.longitude
-	}
-})
+//$.ajax({
+//	url: "http://localhost:8000/weather"
+//	type: "get",
+//	data: {
+//		latitude: getLocation().coords.latitude
+//		longtitude: getLocation().coords.longitude
+//	}
+//})
 
 function getWeather() {
 	var weatherFormat = document.getElementById("weather");
