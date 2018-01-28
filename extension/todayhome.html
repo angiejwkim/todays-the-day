@@ -3,43 +3,66 @@
 
 <head>
 	<link rel="stylesheet" href="todayhomestyle.css">
+	<script type="text/javascript" src="main.js"></script>
 	<link href="https://fonts.googleapis.com/css?family=Gafata" rel="stylesheet">
 </head>
 
-<body>
+<body onload="getTime()">
 
-<div id="datesect">
+<div id="topbar">
 	<h1 id="date">Date Unavailable</h1>
-</div>
-
-<div id="timesect">
-	<h2 id="time">Time Unavailable</h2>
+	<div id="weathertime">
+		<div id="timesection">
+			<h2 id="time">Time Unavailable</h2>
+		</div>
+		<div id="iconsection">
+			<a href="sunnyicon.png"><img src="sunnyicon.png" class="weathericon"></a>
+		</div>
+		<div id="tempsection">
+		</div>
+	</div>
 </div>
 
 <div id="content">
 	<div id="events">
-		<h3> Your Next 5 Events </h3>
-		<ul>
-			<li> Event 1 </li>
-			<li> Event 2 </li>
-			<li> Event 3 </li>
-			<li> Event 4 </li>
-			<li> Event 5 </li>
-		</ul>
+		<div id="nexteventtitle">
+			<h4> Your Next 5 Events </h4>
+		</div>
+		<div id="eventsect">
+			<div id="event1">9:00 AM</div>
+			<h3> Breakfast with Mark </h3>
+		</div>
+
+		<div id="eventsect">
+			<div id="event2">11:30 AM</div>
+			<h3> Meet with Abby </h3>
+		</div>
+
+		<div id="eventsect">
+			<div id="event3">12:45 PM</div>
+			<h3> Class </h3>
+		</div>
+
+		<div id="eventsect">
+			<div id="event4">4:00 PM</div>
+			<h3> Grocery shopping </h3>
+		</div>
+
+		<div id="eventsect">
+			<div id="event5">7:00 PM</div>
+			<h3> Meet with Tom </h3>
+		</div>
 	</div>
+
 	<div id="countdown">
-		<h4> Countdown to Your Next Event </h4>
+		<div id = "countdowntitle">
+			<h6> 4 Hours Until </h6>
+		</div>
+		<div id="nexteventsection"> Breakfast with Mark </div>
 	</div>
 </div>
 
-<div id="factofday">
-	<h5> Fun Fact of the Day </h5>
-	<h6> Elephants are cool. </h6>
-</div>
 
-<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>-->
-<script src="jquery-3.1.1.min.js"></script>
-<script type="text/javascript" src="main.js"></script>
 
 </body>
 

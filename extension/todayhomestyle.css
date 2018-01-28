@@ -1,77 +1,199 @@
 body {
-	background-color: #FFFFFF;
+	background-color: #F0FFFF;
 }
-
-
 h1 {
 	text-align: center;
 	font-size: 2.5em;
 	font-family: 'Gafata', sans-serif;
+	color: #002157;
 }
 
 h2 {
 	text-align: center;
 	font-size: 2em;
-	font-family: 'Gafata', sans-serif;
+	font-family: 'Gafata', sans-serif;	
+	color: #002157;
 }
 
 h3 {
 	text-align: center;
-	font-size: 2em;
-	font-family: 'Gafata', sans-serif;
+	font-size: 1.5em;
+	font-family: 'Gafata', sans-serif;	
+	color: #002157;
+}
+
+.weathericon{
+	vertical-align: middle;
+	
 }
 
 h4 {
 	text-align: center;
 	font-size: 2em;
-	font-family: 'Gafata', sans-serif;
+	font-family: 'Gafata', sans-serif;	
+	color: #002157;
 }
 
 h5 {
 	text-align: center;
 	font-size: 2em;
-	font-family: 'Gafata', sans-serif;
+	font-family: 'Gafata', sans-serif;	
+	color: #002157;
 }
 
 h6 {
 	text-align: center;
-	font-size: 1em;
-	font-family: 'Gafata', sans-serif;
+	font-size: 2em;
+	font-family: 'Gafata', sans-serif;	
+	color: #002157;
 }
 
-ul{
-	font-family: 'Gafata', sans-serif;
+#topbar {
+	min-width:1100px; 
+    width: 100%;
+    background-color: #F0FFFF;
 }
 
-#datesect {
-	height: 50px;
+#weathertime{
+	display: flex;
+	justify-content: center;
+	margin: auto;
+	margin-bottom: -20px;
 }
 
-#timesect {
-	height: 30px;
+#timesection{
+	padding-right: 20px;
+}
+
+#iconsection{
+	padding-left: 20px;
+}
+
+#tempsection{
+	padding-left: 10px;
 }
 
 #content {
     min-width:1100px; 
     width: 100%;
-    background-color: #FFFFFF;
+    background-color: #F0FFFF;;
     margin: auto;
-    height: 450px;
 }
 
 #events {
+	display: flex;
+	flex-direction: column;
     width: 50%;
     float: left;
-    height: 450px;
-    background-color: #FFFFFF;
+    background-color: #F0FFFF;
+    column-gap: 10px;
 }
+
 #countdown {
     width: 50%;
     float: left;
-    height: 450px;
-    background-color: #FFFFFF;
+    background-color: #F0FFFF;
 }
 
-#factofday {
-	height: 20px;
+#event1 {
+  height: 70px;
+  line-height: 70px;
+  width: 70px;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 50%;
+  background: #002157;
+  color: #F0FFFF;
+  font-family: 'Gafata', sans-serif;
+  margin-left: 70px;
 }
+
+#event2 {
+  height: 70px;
+  width: 70px;
+  line-height: 70px;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 50%;
+  background: #002157;
+  color: #F0FFFF;
+  font-family: 'Gafata', sans-serif;
+  margin-top: 10px;  
+  margin-left: 70px;
+}
+
+#event3 {
+  height: 70px;
+  width: 70px;
+  line-height: 70px;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 50%;
+  background: #002157;
+  color: #F0FFFF;
+  font-family: 'Gafata', sans-serif;
+  margin-top: 10px;  
+  margin-left: 70px;
+}
+
+#event4 {
+  height: 70px;
+  width: 70px;
+  line-height: 70px;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 50%;
+  background: #002157;
+  color: #F0FFFF;
+  font-family: 'Gafata', sans-serif;
+  margin-top: 10px;  
+  margin-left: 70px;
+}
+
+#event5 {
+  height: 70px;
+  width: 70px;
+  line-height: 70px;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 50%;
+  background: #002157;
+  color: #F0FFFF;
+  font-family: 'Gafata', sans-serif;  
+  margin-top: 10px;
+  margin-left: 70px;
+}
+
+#nexteventsection {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  font-size: 2em;
+  color: #F0FFFF;
+  line-height: 300px;
+  text-align: center;
+  background: #002157;
+  font-family: 'Gafata', sans-serif;  
+  margin-left: 165px;
+}
+
+#eventsect{
+	display: flex;
+	justify-content: space-between;
+}
+
+#nexteventtitle{
+	padding: 0px;
+	margin-bottom: -10px;
+}
+
+#countdowntitle{
+	margin-top: -30px;
+}
+
+
