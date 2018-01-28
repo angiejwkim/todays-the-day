@@ -35,3 +35,14 @@ function updateDay(i) {
 }
 
 window.onload = getTime()
+window.onload = chrome.identity.getAuthToken({ 'interactive': true }, function(token) {
+  // Use the token.
+  $.get(
+    "https://www.googleapis.com/calendar/v3/users/me/calendarList?access_token="+token,
+    function(data) {
+       console.log(data);
+    }
+	);
+});
+
+
