@@ -117,7 +117,7 @@ $.ajax({
 	    var numMinutes = timeDiff % 60;
 
 		if (eventTime <= currTime || (eventDate < currDate)) {
-	    	document.getElementById("hoursleft").innerHTML = "currently";
+	    	document.getElementById("hoursleft").innerHTML = "right now";
 	    }
 	    else if (numMinutes == 0) {
 	    	document.getElementById("hoursleft").innerHTML = 'in ' + numHours + ' hours';
