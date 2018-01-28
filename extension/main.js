@@ -25,8 +25,16 @@ function updateMins(i) {
 }
 
 function updateHours(i) {
-	if (i > 12) {i = i-12};
-	return i;
+	if (i > 12) {
+		i = i-12;
+		return i;
+	}
+	else if (i == 0){
+		return 12;
+	}
+	else {
+		return i;
+	}
 }
 
 function updateDay(i) {
@@ -44,5 +52,19 @@ window.onload = chrome.identity.getAuthToken({ 'interactive': true }, function(t
     }
 	);
 });
+
+function getWeather() {
+
+}
+
+function getLocation() {
+	var loc = document.getElementById("location");
+    if (navigator.geolocation) {
+        return navigator.geolocation.getCurrentPosition();
+    } else { 
+        loc.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+
 
 
