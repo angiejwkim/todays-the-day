@@ -127,7 +127,7 @@ h2, h3, h4, h5, h6 {
   line-height: 300px;
   text-align: center;
   background: #CF000F;
-  font-family: 'Hind Guntur', sans-serif;  
+  font-family: 'Lato', sans-serif;
   margin-left: 165px;
   margin-top: 10px;
   margin-bottom: 60px;
@@ -151,10 +151,5 @@ h2, h3, h4, h5, h6 {
 #numberleft{
 	margin-top: -20px;
 }
-
-#innerevents {
-	font-family: 'Hind Guntur', sans-serif;  
-}
-
 
 
